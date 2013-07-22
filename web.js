@@ -4,10 +4,9 @@ var fs = require('fs');
 app.use(express.logger());
 
 app.get('/', function(request, response) {
-  var data = fs.readFileSync('./index.html');
-  response.writeHeader(200, {"Content-type": "text/html"});
-  response.write(data);
-  response.close();
+  var data = fs.readFileSync('index.html');
+  response.writeHeader(200, {Content-Type": 'text/html'});
+  response.end(data);
 });
 
 var port = process.env.PORT || 5000;
