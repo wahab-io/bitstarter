@@ -4,7 +4,7 @@ var fs = require('fs');
 app.use(express.logger());
 
 app.get('/', function(request, response) {
-  var data = fs.readFileSync('index.html');
+  var data = fs.readFileSync('./index.html');
   response.writeHeader(200, {"Content-type": "text/html"});
   response.write(data);
   response.close();
